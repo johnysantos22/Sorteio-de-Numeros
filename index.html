@@ -11,26 +11,26 @@
 
 <body>
     <br>
+    <div class="container">
+        <h1> <b>Sorteio de Números </b> </h1>
+        <br>
+        <br>
 
-    <h1> <b>Sorteio de Números </b> </h1>
-    <br>
-    <br>
+        <input type="number" name="minimo" value="" placeholder="Mínimo" id="minimo">
+        <br>
 
-    <input type="number" name="minimo" value="" placeholder="Mínimo" id="minimo">
-    <br>
+        <h2 id="resultado"></h2>
 
-    <h2 id="resultado"></h2>
+        <input type="number" name="maximo" value="" placeholder="Máximo" id="maximo">
+        <br>
+        <br>
+        <br>
 
-     <input type="number" name="maximo" value="" placeholder="Máximo" id="maximo">
-     <br>
-     <br>
-     <br>
+        <button onclick="sorteio()">Sortear</button>
+    </div>
 
-     <button onclick="sorteio()">Sortear</button>
-
-     
     <div class="body">
-    <div id="quadrado"></div>
+        <div id="quadrado"></div>
     </div>
 
     <script src="./script.js"></script>

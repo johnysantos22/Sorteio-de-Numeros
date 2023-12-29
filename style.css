@@ -3,6 +3,21 @@ body {
     background-clip: content-box;
 }
 
+.container {
+    border: 1px solid #00334094;
+    background: radial-gradient(#bdc3c7, #2c3e50);
+    padding: 25px;
+    margin: 25px auto;
+    max-width: 80%;
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, .6);
+    -webkit-border-radius: 10px/100px;
+    /* Safari/Chrome, and current version of Opera */
+    -moz-border-radius: 10px/100px;
+    /* Firefox */
+    border-radius: 10px/100px;
+    /* The / will cut the corner in half */
+}
+
 button {
     color: white;
     width: 120px;
@@ -28,7 +43,8 @@ input {
 }
 
 html {
-    background-image: url(./imagem.jpg );
+    overflow: hidden;
+    background-image: url(https://img.freepik.com/vetores-gratis/fundo-de-numerologia-gradiente_23-2150051037.jpg?w=826&t=st=1703811876~exp=1703812476~hmac=fc13cd6527b5301fcec6b8edc9ecd7882f47326bbc63b16b33ad80884a9a8dc4);
     min-height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
