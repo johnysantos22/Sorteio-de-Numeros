@@ -1,40 +1,74 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorteio da sorte</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Sorteio de Números</title>
+        <link rel="stylesheet" href="./style.css">
+        <!-- Fonte moderna -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+        <!-- Favicon (SVG data URI) -->
+        <link rel="icon"
+            href="data:image/svg+xml;utf8,&lt;svg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'&gt;&lt;rect%20width='100'%20height='100'%20rx='20'%20fill='%230b74de'/%3E&lt;text%20x='50'%20y='64'%20font-size='52'%20font-family='Inter,Arial,Helvetica,sans-serif'%20fill='white'%20text-anchor='middle'&gt;S&lt;/text&gt;&lt;/svg&gt;">
+        <meta name="theme-color" content="#0b74de">
+    </head>
 
-<body>
-    <br>
-    <div class="container">
-        <h1> <b>Sorteio de Números </b> </h1>
-        <br>
-        <br>
+    <body>
 
-        <input type="number" name="minimo" value="" placeholder="Mínimo" id="minimo">
-        <br>
+        <div class="container" role="main">
+            <header>
+                <div class="brand" style="display:flex;align-items:center;gap:10px;justify-content:center">
+                    <!-- pequeno ícone SVG ao lado do título -->
+                    <svg width="40" height="40" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true" focusable="false">
+                        <rect width="100" height="100" rx="20" fill="#0b74de" />
+                        <text x="50" y="64" font-size="52" font-family="Inter,Arial,Helvetica,sans-serif" fill="white"
+                            text-anchor="middle">S</text>
+                    </svg>
+                    <div>
+                        <h1 style="margin:0">Sorteio de Números</h1>
+                        <p class="muted" style="margin:4px 0 0">Escolha um intervalo e clique em sortear — o número
+                            aparecerá em alguns segundos.</p>
+                    </div>
+                </div>
+            </header>
 
-        <h2 id="resultado"></h2>
+            <section class="controls" aria-label="Controles do sorteio">
+                <div class="form-row">
+                    <label for="minimo" class="sr-only"></label>
+                    <input id="minimo" name="minimo" type="number" placeholder="Mínimo" inputmode="numeric">
 
-        <input type="number" name="maximo" value="" placeholder="Máximo" id="maximo">
-        <br>
-        <br>
-        <br>
+                    <label for="maximo" class="sr-only"></label>
+                    <input id="maximo" name="maximo" type="number" placeholder="Máximo" inputmode="numeric">
 
-        <button onclick="sorteio()">Sortear</button>
-    </div>
+                    <button id="btnSortear" type="button">Sortear</button>
+                </div>
+            </section>
 
-    <div class="body">
-        <div id="quadrado"></div>
-    </div>
+            <div id="resultado" role="status" aria-live="polite"></div>
 
-    <script src="./script.js"></script>
-</body>
+            <footer style="margin-top:14px;font-size:0.9rem;color:#6b7280">Feito com ♥ — ajuste o intervalo e clique em
+                <strong>Sortear</strong>.
+            </footer>
+        </div>
 
+        <script>
+            // ligar o botão ao mesmo comportamento já usado no script.js
+            (function () {
+                const btn = document.getElementById('btnSortear');
+                if (btn) {
+                    btn.addEventListener('click', function () {
+                        // chama a função global sorteio() definida em script.js
+                        if (typeof sorteio === 'function') sorteio();
+                    });
+                }
+            })();
+        </script>
+
+        <script src="./script.js"></script>
+
+    </body>
 
 </html>
